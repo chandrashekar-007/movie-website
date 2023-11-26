@@ -339,7 +339,7 @@ hr{
         display: grid;
         max-width: 20rem;
         padding: 2rem;
-        margin: 3rem auto;
+        margin: 1rem auto;
     }
     .button{
         text-align: center;
@@ -347,6 +347,7 @@ hr{
         width:10rem;
         margin-top: 1rem;
         padding: 0.6rem 1rem;
+        animation: shake .8s ease-in 8s 1;
     }
 }
 
@@ -363,7 +364,7 @@ hr{
         max-width: 16rem;
         padding: 1.5rem;
         width: 100%;
-        margin: 3rem auto;
+        margin: 1rem auto;
     }
     .search-bar{
         max-width: 16rem;
@@ -378,6 +379,7 @@ hr{
         margin-top: 1rem;
         padding: 0.6rem 1rem;
         font-size: 0.65rem;
+        animation: shake .8s ease-in 10s 1;
     }
 }
 
