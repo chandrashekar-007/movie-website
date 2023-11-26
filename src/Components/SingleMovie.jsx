@@ -9,9 +9,7 @@ const SingleMovie = () => {
   const { id } = useParams();
   const [singleData, setSingleData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const { API,setError } = useContext(AppContext);
-
   const {
     Title,
     Released,
@@ -36,6 +34,11 @@ const SingleMovie = () => {
     }
   };
 
+  useEffect(() => { 
+    document.title = `${Title}`
+    return ()=>document.title
+  }, [Title])
+  
   useEffect(
     () => {
       const timer = setTimeout(() => {
@@ -45,8 +48,6 @@ const SingleMovie = () => {
     },
     [id]
   );
-
-  console.log(singleData);
 
   if(loading){
     return(

@@ -2,21 +2,15 @@ import { createContext, useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import {ThreeDots} from "react-loader-spinner"
 import {ProgressBar} from "react-loader-spinner"
-
 import axios from 'axios'
-
 const AppContext = createContext();
 
 const AppProvider =({children})=>{
-
     const [error, setError] = useState({show:"false", msg:""})
     const [loading, setLoading] = useState(true)
     const [movieData, setMovieData] = useState([])
     const [category, setCategory] = useState("twilight")
-
-  
-    //  const API = `http://www.omdbapi.com/?apikey=2e49b834&i=tt0120338`
-     const API = `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}`
+    const API = `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}`
   
     const getMovie = async (url) => {
       try {
@@ -33,18 +27,19 @@ const AppProvider =({children})=>{
         console.log(error)
       }
     }
-    console.log(movieData)
+    
+  useEffect(() => {
+    document.title = `SK Movies | Search you favourites here`
+  }, [])
   
-    useEffect(() => {
-      //debounce function
-      const timer = setTimeout(() => {
-        getMovie(`${API}&s=${category}`);
-      }, 2000);
-      // cleanup function
-      return ()=>clearTimeout(timer)
-    }, [category])
-  
-    // console.log(category)
+  useEffect(() => {
+    //debounce function
+    const timer = setTimeout(() => {
+      getMovie(`${API}&s=${category}`);
+    }, 2000);
+    // cleanup function
+    return ()=>clearTimeout(timer)
+  }, [category])
     
     if(loading){
       return(
@@ -73,18 +68,5 @@ const AppProvider =({children})=>{
 }
 
 export { AppProvider , AppContext }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
