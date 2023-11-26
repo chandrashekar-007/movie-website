@@ -10,7 +10,7 @@ const SingleMovie = () => {
   const [singleData, setSingleData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { API } = useContext(AppContext);
+  const { API,setError } = useContext(AppContext);
 
   const {
     Title,
