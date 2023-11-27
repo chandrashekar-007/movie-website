@@ -4,7 +4,6 @@ import Movies from './Movies'
 import { AppContext } from './context/Context'
 
 const MoviePage = () => {
-  const {loading} = useContext(AppContext)
   useEffect(() => {
     document.title = `SK Movies | Search you favourites here`
   }, [])

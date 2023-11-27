@@ -10,7 +10,7 @@ const AppProvider =({children})=>{
     const [loading, setLoading] = useState(true)
     const [movieData, setMovieData] = useState([])
     const [category, setCategory] = useState("twilight")
-    const API = `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}`
+    const API = `https://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}`
   
     const getMovie = async (url) => {
       try {
